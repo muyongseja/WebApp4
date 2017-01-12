@@ -13,7 +13,7 @@
 	<li>내용 : ${board.content}</li>
 </ul>
 <br><br>
-<input type="button" value="수정" onclick="location.href='update.board'"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="수정" onclick="location.href='update.board?seq=${board.seq}'"/>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="button" value="삭제"/>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="button" value="목록"/>&nbsp;&nbsp;&nbsp;&nbsp;
 </body>

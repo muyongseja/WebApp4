@@ -44,6 +44,20 @@ public class BoardController {
 		mv.addObject("board", board);
 		return mv;
 	}
+	
+	@RequestMapping(value="/update.board", method=RequestMethod.GET)
+	public ModelAndView update(int seq) throws SQLException{
+		ModelAndView mv = new ModelAndView("board/update");
+		Board board = boardService.findBySeq(seq);
+		mv.addObject("board", board);
+		return mv;
+	}
+	
+	@RequestMapping(value="/update.board", method=RequestMethod.POST)
+	public String update_complete(Board board) throws SQLException{
+		boardService.update(board);
+		return "redirect:list.board";
+	}
 }
 
 

@@ -106,8 +106,10 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public void update(Board board) throws SQLException {
-		// TODO Auto-generated method stub
-
+		String sql = "update tblSpringBoard set title=?, writer=?, content=? where seq=?";
+		
+		Object[] val = new Object[]{board.getTitle(), board.getWriter(), board.getContent(), board.getSeq()};
+		jdbcTemplate.update(sql, val);
 	}
 
 	@Override

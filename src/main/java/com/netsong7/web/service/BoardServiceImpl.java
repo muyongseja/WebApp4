@@ -32,8 +32,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void update(Board board) throws SQLException {
-		// TODO Auto-generated method stub
-
+		boardDao.update(board);
 	}
 
 	@Override
