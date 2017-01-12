@@ -1,0 +1,46 @@
+package com.netsong7.web.service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
+import com.netsong7.web.model.Board;
+import com.netsong7.web.persistence.BoardDao;
+
+@Component("boardService")
+public class BoardServiceImpl implements BoardService {
+	@Autowired
+	private BoardDao boardDao;
+
+	@Override
+	public List getList() throws SQLException {
+		return boardDao.getList();
+	}
+
+	@Override
+	public void write(Board board) throws SQLException {
+		boardDao.write(board);
+	}
+
+	@Override
+	public Board findBySeq(int seq) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(Board board) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int seq) throws SQLException {
+		// TODO Auto-generated method stub
+
+	}
+
+}
