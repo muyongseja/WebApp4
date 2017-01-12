@@ -27,8 +27,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Board findBySeq(int seq) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		return boardDao.findBySeq(seq);
 	}
 
 	@Override

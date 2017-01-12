@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.netsong7.web.model.Board;
@@ -37,8 +38,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/read.board")
-	public String read(){
-		return "board/read";
+	public ModelAndView read(@RequestParam int seq) throws SQLException{
+		ModelAndView mv = new ModelAndView("board/read");
+		Board board = boardService.findBySeq(seq);
+		mv.addObject("board", board);
+		return mv;
 	}
 }
 

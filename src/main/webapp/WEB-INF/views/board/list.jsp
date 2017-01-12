@@ -17,7 +17,7 @@
 <c:forEach var="row" items="${board}">
 	<tr>
 		<td>${row.seq}</td>
-		<td><a href="read.board">${row.title}</a></td>
+		<td><a href="read.board?seq=${row.seq}">${row.title}</a></td>
 		<td>${row.writer}</td>
 		<td>${row.regdate}</td>
 		<td>${row.hitcount}</td>
