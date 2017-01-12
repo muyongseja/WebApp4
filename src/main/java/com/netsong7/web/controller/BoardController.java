@@ -38,7 +38,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/read.board")
-	public ModelAndView read(@RequestParam int seq) throws SQLException{
+	public ModelAndView read(int seq) throws SQLException{
 		ModelAndView mv = new ModelAndView("board/read");
 		Board board = boardService.findBySeq(seq);
 		mv.addObject("board", board);
